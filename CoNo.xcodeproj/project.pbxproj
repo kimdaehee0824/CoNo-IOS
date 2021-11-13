@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57BC6D37273FFECF0023FB55 /* ABeeZee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57BC6D36273FFECF0023FB55 /* ABeeZee-Regular.ttf */; };
+		57BC6D38273FFECF0023FB55 /* ABeeZee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57BC6D36273FFECF0023FB55 /* ABeeZee-Regular.ttf */; };
 		57D720C8273E2FC900D25391 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D720C7273E2FC900D25391 /* WidgetKit.framework */; };
 		57D720CA273E2FC900D25391 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D720C9273E2FC900D25391 /* SwiftUI.framework */; };
 		57D720CD273E2FC900D25391 /* COVIDWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D720CC273E2FC900D25391 /* COVIDWidget.swift */; };
@@ -69,6 +71,7 @@
 /* Begin PBXFileReference section */
 		07F9C8A2F3C41D319D325ED1 /* Pods_CoNo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoNo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEF0B3AF498788358F2D0A7 /* Pods-CoNo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoNo.release.xcconfig"; path = "Target Support Files/Pods-CoNo/Pods-CoNo.release.xcconfig"; sourceTree = "<group>"; };
+		57BC6D36273FFECF0023FB55 /* ABeeZee-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ABeeZee-Regular.ttf"; path = "../../../../../Downloads/ABeeZee/ABeeZee-Regular.ttf"; sourceTree = "<group>"; };
 		57D720C6273E2FC900D25391 /* COVIDWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = COVIDWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D720C7273E2FC900D25391 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		57D720C9273E2FC900D25391 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -135,6 +138,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57BC6D35273FFEB40023FB55 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				57D7ECB8273D21A7000FDE32 /* Assets.xcassets */,
+				57BC6D36273FFECF0023FB55 /* ABeeZee-Regular.ttf */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		57D720CB273E2FC900D25391 /* COVIDWidget */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,11 +185,11 @@
 		57D7ECAE273D21A5000FDE32 /* CoNo */ = {
 			isa = PBXGroup;
 			children = (
+				57BC6D35273FFEB40023FB55 /* Assets */,
 				57D7ECDF273D2238000FDE32 /* MainViewController.swift */,
 				57D7ECE1273D2861000FDE32 /* DataResponse.swift */,
 				57D7ECAF273D21A5000FDE32 /* AppDelegate.swift */,
 				57D7ECB1273D21A5000FDE32 /* SceneDelegate.swift */,
-				57D7ECB8273D21A7000FDE32 /* Assets.xcassets */,
 				57D7ECBA273D21A7000FDE32 /* LaunchScreen.storyboard */,
 				57D7ECBD273D21A7000FDE32 /* Info.plist */,
 			);
@@ -359,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57D720D0273E2FCB00D25391 /* Assets.xcassets in Resources */,
+				57BC6D38273FFECF0023FB55 /* ABeeZee-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +379,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57BC6D37273FFECF0023FB55 /* ABeeZee-Regular.ttf in Resources */,
 				57D7ECBC273D21A7000FDE32 /* LaunchScreen.storyboard in Resources */,
 				57D7ECB9273D21A7000FDE32 /* Assets.xcassets in Resources */,
 			);
