@@ -10,6 +10,15 @@
 		57BC6D37273FFECF0023FB55 /* ABeeZee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57BC6D36273FFECF0023FB55 /* ABeeZee-Regular.ttf */; };
 		57BC6D38273FFECF0023FB55 /* ABeeZee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57BC6D36273FFECF0023FB55 /* ABeeZee-Regular.ttf */; };
 		57D41F022740918C00298CA9 /* DeshBoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D41F012740918C00298CA9 /* DeshBoardTableViewCell.swift */; };
+		57D4998F274134AE00A39237 /* UpdateDateLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4998E274134AE00A39237 /* UpdateDateLabelTableViewCell.swift */; };
+		57D499912741494300A39237 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57D499902741494300A39237 /* NotoSansKR-Bold.otf */; };
+		57D499922741494300A39237 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57D499902741494300A39237 /* NotoSansKR-Bold.otf */; };
+		57D499932741494300A39237 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57D499902741494300A39237 /* NotoSansKR-Bold.otf */; };
+		57D499942741494300A39237 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57D499902741494300A39237 /* NotoSansKR-Bold.otf */; };
+		57D4999727414F3100A39237 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4999627414F3100A39237 /* MainModel.swift */; };
+		57D4999827414F3100A39237 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4999627414F3100A39237 /* MainModel.swift */; };
+		57D4999927414F3100A39237 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4999627414F3100A39237 /* MainModel.swift */; };
+		57D4999A27414F3100A39237 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4999627414F3100A39237 /* MainModel.swift */; };
 		57D720C8273E2FC900D25391 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D720C7273E2FC900D25391 /* WidgetKit.framework */; };
 		57D720CA273E2FC900D25391 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D720C9273E2FC900D25391 /* SwiftUI.framework */; };
 		57D720CD273E2FC900D25391 /* COVIDWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D720CC273E2FC900D25391 /* COVIDWidget.swift */; };
@@ -74,6 +83,9 @@
 		4CEF0B3AF498788358F2D0A7 /* Pods-CoNo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoNo.release.xcconfig"; path = "Target Support Files/Pods-CoNo/Pods-CoNo.release.xcconfig"; sourceTree = "<group>"; };
 		57BC6D36273FFECF0023FB55 /* ABeeZee-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ABeeZee-Regular.ttf"; path = "../../../../../Downloads/ABeeZee/ABeeZee-Regular.ttf"; sourceTree = "<group>"; };
 		57D41F012740918C00298CA9 /* DeshBoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeshBoardTableViewCell.swift; sourceTree = "<group>"; };
+		57D4998E274134AE00A39237 /* UpdateDateLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDateLabelTableViewCell.swift; sourceTree = "<group>"; };
+		57D499902741494300A39237 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Bold.otf"; path = "../../../../../Downloads/NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
+		57D4999627414F3100A39237 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		57D720C6273E2FC900D25391 /* COVIDWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = COVIDWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D720C7273E2FC900D25391 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		57D720C9273E2FC900D25391 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -144,9 +156,21 @@
 			isa = PBXGroup;
 			children = (
 				57D7ECB8273D21A7000FDE32 /* Assets.xcassets */,
+				57D499902741494300A39237 /* NotoSansKR-Bold.otf */,
 				57BC6D36273FFECF0023FB55 /* ABeeZee-Regular.ttf */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		57D4999527414ECA00A39237 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57D7ECBA273D21A7000FDE32 /* LaunchScreen.storyboard */,
+				57D4998E274134AE00A39237 /* UpdateDateLabelTableViewCell.swift */,
+				57D41F012740918C00298CA9 /* DeshBoardTableViewCell.swift */,
+				57D7ECDF273D2238000FDE32 /* MainViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		57D720CB273E2FC900D25391 /* COVIDWidget */ = {
@@ -187,13 +211,12 @@
 		57D7ECAE273D21A5000FDE32 /* CoNo */ = {
 			isa = PBXGroup;
 			children = (
+				57D4999527414ECA00A39237 /* View */,
 				57BC6D35273FFEB40023FB55 /* Assets */,
-				57D7ECDF273D2238000FDE32 /* MainViewController.swift */,
-				57D41F012740918C00298CA9 /* DeshBoardTableViewCell.swift */,
 				57D7ECE1273D2861000FDE32 /* DataResponse.swift */,
+				57D4999627414F3100A39237 /* MainModel.swift */,
 				57D7ECAF273D21A5000FDE32 /* AppDelegate.swift */,
 				57D7ECB1273D21A5000FDE32 /* SceneDelegate.swift */,
-				57D7ECBA273D21A7000FDE32 /* LaunchScreen.storyboard */,
 				57D7ECBD273D21A7000FDE32 /* Info.plist */,
 			);
 			path = CoNo;
@@ -374,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57D720D0273E2FCB00D25391 /* Assets.xcassets in Resources */,
+				57D499942741494300A39237 /* NotoSansKR-Bold.otf in Resources */,
 				57BC6D38273FFECF0023FB55 /* ABeeZee-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,6 +408,7 @@
 			files = (
 				57BC6D37273FFECF0023FB55 /* ABeeZee-Regular.ttf in Resources */,
 				57D7ECBC273D21A7000FDE32 /* LaunchScreen.storyboard in Resources */,
+				57D499912741494300A39237 /* NotoSansKR-Bold.otf in Resources */,
 				57D7ECB9273D21A7000FDE32 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +417,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57D499922741494300A39237 /* NotoSansKR-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +425,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57D499932741494300A39237 /* NotoSansKR-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +541,7 @@
 			files = (
 				57D720D2273E2FCB00D25391 /* COVIDWidget.intentdefinition in Sources */,
 				57D720CD273E2FC900D25391 /* COVIDWidget.swift in Sources */,
+				57D4999A27414F3100A39237 /* MainModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,10 +549,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57D4999727414F3100A39237 /* MainModel.swift in Sources */,
 				57D7ECE0273D2238000FDE32 /* MainViewController.swift in Sources */,
 				57D7ECB0273D21A5000FDE32 /* AppDelegate.swift in Sources */,
 				57D7ECE2273D2861000FDE32 /* DataResponse.swift in Sources */,
 				57D7ECB2273D21A5000FDE32 /* SceneDelegate.swift in Sources */,
+				57D4998F274134AE00A39237 /* UpdateDateLabelTableViewCell.swift in Sources */,
 				57D41F022740918C00298CA9 /* DeshBoardTableViewCell.swift in Sources */,
 				57D720D3273E2FCB00D25391 /* COVIDWidget.intentdefinition in Sources */,
 			);
@@ -534,6 +564,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57D4999827414F3100A39237 /* MainModel.swift in Sources */,
 				57D7ECC7273D21A7000FDE32 /* CoNoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,6 +575,7 @@
 			files = (
 				57D7ECD1273D21A7000FDE32 /* CoNoUITests.swift in Sources */,
 				57D7ECD3273D21A7000FDE32 /* CoNoUITestsLaunchTests.swift in Sources */,
+				57D4999927414F3100A39237 /* MainModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
