@@ -35,26 +35,19 @@ class MainViewController: UIViewController {
         $0.tintColor = .label
     }
     
-    var CovidDeviderTitleLabel = UILabel().then {
-        dateGet()
-        $0.text = covid19struct.updateDate
-        $0.font = UIFont(name: "ABeeZee-Regular", size: 20.0)
-        $0.textAlignment = .center
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         dateGet()
         mainTableView.delegate = self
         mainTableView.dataSource = self
+        mainTableView.reloadData()
         mainTableView.register(DeshBoardTableViewCell.self, forCellReuseIdentifier: "cell")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-            self.CovidDeviderTitleLabel.text = "\(covid19struct.updateDate ?? "데이터가 없어요")일 기준"
-        }
+        mainTableView.register(UpdateDateLabelTableViewCell.self, forCellReuseIdentifier: "cell2")
         view.backgroundColor = .systemBackground
         view.addSubview(mainBackView)
         mainBackView.addSubview(mainTableView)
-        mainBackView.addSubview(CovidDeviderTitleLabel)
         setNavagationBar()
         setConstraint()
         setSafeArea()
@@ -62,17 +55,12 @@ class MainViewController: UIViewController {
     
     func setConstraint() {
         mainTableView.snp.makeConstraints {
-            $0.top.equalTo(40)
+            $0.top.equalTo(0)
             $0.left.equalTo(0)
             $0.right.equalTo(0)
             $0.bottom.equalTo(0)
         }
-        CovidDeviderTitleLabel.snp.makeConstraints {
-            $0.top.equalTo(10)
-            $0.left.equalTo(0)
-            $0.right.equalTo(0)
-            $0.height.equalTo(20)
-        }
+
         
         
     }
@@ -96,15 +84,25 @@ class MainViewController: UIViewController {
 }
 extension MainViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if indexPath.row == 0 {
+        if indexPath.row == 0 {
+            let Ccell = tableView.dequeueReusableCell(withIdentifier: "cell2") as! UpdateDateLabelTableViewCell
+            let bgColorView = UIView()
+            bgColorView.backgroundColor = .clear
+            Ccell.selectedBackgroundView = bgColorView
+            Ccell.CovidDeviderTitleLabel.text = "\(covid19struct.updateDate ?? "데이터가 없어요")일 기준"
+            return Ccell
+        }
+        else {
+//        if indexPath.row == 1 {
             let Ccell = tableView.dequeueReusableCell(withIdentifier: "cell") as! DeshBoardTableViewCell
             let bgColorView = UIView()
             bgColorView.backgroundColor = .clear
             Ccell.selectedBackgroundView = bgColorView
             return Ccell
+        }
     }
 }
