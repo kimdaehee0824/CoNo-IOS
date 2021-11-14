@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		57BC6D37273FFECF0023FB55 /* ABeeZee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57BC6D36273FFECF0023FB55 /* ABeeZee-Regular.ttf */; };
 		57BC6D38273FFECF0023FB55 /* ABeeZee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57BC6D36273FFECF0023FB55 /* ABeeZee-Regular.ttf */; };
+		57D41F022740918C00298CA9 /* DeshBoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D41F012740918C00298CA9 /* DeshBoardTableViewCell.swift */; };
 		57D720C8273E2FC900D25391 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D720C7273E2FC900D25391 /* WidgetKit.framework */; };
 		57D720CA273E2FC900D25391 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D720C9273E2FC900D25391 /* SwiftUI.framework */; };
 		57D720CD273E2FC900D25391 /* COVIDWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D720CC273E2FC900D25391 /* COVIDWidget.swift */; };
@@ -72,6 +73,7 @@
 		07F9C8A2F3C41D319D325ED1 /* Pods_CoNo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoNo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEF0B3AF498788358F2D0A7 /* Pods-CoNo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoNo.release.xcconfig"; path = "Target Support Files/Pods-CoNo/Pods-CoNo.release.xcconfig"; sourceTree = "<group>"; };
 		57BC6D36273FFECF0023FB55 /* ABeeZee-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ABeeZee-Regular.ttf"; path = "../../../../../Downloads/ABeeZee/ABeeZee-Regular.ttf"; sourceTree = "<group>"; };
+		57D41F012740918C00298CA9 /* DeshBoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeshBoardTableViewCell.swift; sourceTree = "<group>"; };
 		57D720C6273E2FC900D25391 /* COVIDWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = COVIDWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D720C7273E2FC900D25391 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		57D720C9273E2FC900D25391 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -187,6 +189,7 @@
 			children = (
 				57BC6D35273FFEB40023FB55 /* Assets */,
 				57D7ECDF273D2238000FDE32 /* MainViewController.swift */,
+				57D41F012740918C00298CA9 /* DeshBoardTableViewCell.swift */,
 				57D7ECE1273D2861000FDE32 /* DataResponse.swift */,
 				57D7ECAF273D21A5000FDE32 /* AppDelegate.swift */,
 				57D7ECB1273D21A5000FDE32 /* SceneDelegate.swift */,
@@ -522,6 +525,7 @@
 				57D7ECB0273D21A5000FDE32 /* AppDelegate.swift in Sources */,
 				57D7ECE2273D2861000FDE32 /* DataResponse.swift in Sources */,
 				57D7ECB2273D21A5000FDE32 /* SceneDelegate.swift in Sources */,
+				57D41F022740918C00298CA9 /* DeshBoardTableViewCell.swift in Sources */,
 				57D720D3273E2FCB00D25391 /* COVIDWidget.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,6 +586,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z25H7B85Z8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = COVIDWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = COVIDWidget;
@@ -608,6 +613,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z25H7B85Z8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = COVIDWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = COVIDWidget;
@@ -752,6 +758,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z25H7B85Z8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoNo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -780,6 +787,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 368YFJ26SB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoNo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -807,6 +815,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z25H7B85Z8;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -832,6 +841,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z25H7B85Z8;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -856,6 +866,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z25H7B85Z8;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -879,6 +890,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z25H7B85Z8;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -7,20 +7,26 @@
 
 import Foundation
 import Alamofire
+import WidgetKit
+import RxCocoa
 
 import SwiftyXMLParser
 
 let apiKey = "6v8BYgD7fIO1KjC3kqQ6w73J7NCGn%2BwAdqZT7WjhN%2BubaEF50QO9YalOb8ZFZzkl5nTXjtJAjdbrncrJJGwvAw%3D%3D"
 let DateData = Date()
 let yesData = Date(timeIntervalSinceNow:-(60*60*24))
+// http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson?serviceKey=6v8BYgD7fIO1KjC3kqQ6w73J7NCGn%2BwAdqZT7WjhN%2BubaEF50QO9YalOb8ZFZzkl5nTXjtJAjdbrncrJJGwvAw%3D%3D&pageNo=1&numOfRows=10&startCreateDt=20211111&endCreateDt=20211112
+//http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson?serviceKey=\(apiKey)&pageNo=1&numOfRows=10&startCreateDt=\(yesconvertDate)&endCreateDt=\(convertDate)
 
-struct covid19struct {
-    let STATE_DT : String
-    let DECIDE_CNT : String
-    let CLEAR_CNT : String
-    let DEATH_CNT : String
-    let updateDate : String
+struct Covid19struct {
+    var STATE_DT : String?
+    var DECIDE_CNT : String?
+    var NOW_DECIDE_CNT : String?
+    var CLEAR_CNT : String?
+    var DEATH_CNT : String?
+    var updateDate : String?
 }
+var covid19struct = Covid19struct()
 
 func dateGet() {
     let fommatter = DateFormatter()
@@ -28,7 +34,7 @@ func dateGet() {
     let convertDate = fommatter.string(from: .now)
     let yesconvertDate = fommatter.string(from: yesData)
 
-    AF.request("http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson?serviceKey=\(apiKey)&pageNo=1&numOfRows=10&startCreateDt=\(yesconvertDate)&endCreateDt=\(convertDate)", method: .get )
+    AF.request("http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson?serviceKey=6v8BYgD7fIO1KjC3kqQ6w73J7NCGn%2BwAdqZT7WjhN%2BubaEF50QO9YalOb8ZFZzkl5nTXjtJAjdbrncrJJGwvAw%3D%3D&pageNo=1&numOfRows=10&startCreateDt=20211111&endCreateDt=20211112", method: .get )
         .validate(statusCode: 200..<300)
         .responseString { response in
             let url = response.request
@@ -54,6 +60,10 @@ func dateGet() {
                         guard let qw = Int(lestdecideCount) else {return}
                         guard let we = Int(decideCount) else {return}
                         print(we - qw)
+                        
+                        WidgetCenter.shared.reloadAllTimelines()
+                    } else {
+                    print("오늘 값 없음!!")
                     }
                 } else {
                     print("값 없음!!")
@@ -88,12 +98,13 @@ func dateGet() {
                         let fommatter = DateFormatter()
                         fommatter.dateFormat = "yyyy.MM.dd"
                         let updateDate = fommatter.string(from: date ?? .now)
-                     
-                        
-                        print("\(String(describing: updateDate)) \(stateTime)")
+                        covid19struct.updateDate = "\(updateDate)"
+                        DispatchQueue.main.async {
+                            
+
+                        }
                     }
                 }
-                
             case .failure(let error):
                 print("Request Error\nCode:\(error._code), Message: \(error.errorDescription!)")
                 
