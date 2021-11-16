@@ -39,9 +39,13 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateGet()
+        
+                dateGet()
         mainTableView.delegate = self
         mainTableView.dataSource = self
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.4) {
+            self.mainTableView.reloadData()
+        }
         mainTableView.reloadData()
         mainTableView.register(DeshBoardTableViewCell.self, forCellReuseIdentifier: "cell")
         mainTableView.register(UpdateDateLabelTableViewCell.self, forCellReuseIdentifier: "cell2")
@@ -84,7 +88,7 @@ class MainViewController: UIViewController {
 }
 extension MainViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 7
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -97,9 +101,14 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
             return Ccell
         }
         else {
+            let deshViewOffset = DeshViewOffset()
 //        if indexPath.row == 1 {
             let Ccell = tableView.dequeueReusableCell(withIdentifier: "cell") as! DeshBoardTableViewCell
             let bgColorView = UIView()
+            Ccell.DeshBoardView.backgroundColor = deshViewOffset.backColor?[indexPath.row]
+            Ccell.decideDateLabel.textColor = deshViewOffset.labelColor?[indexPath.row]
+            Ccell.decideDateLabel.text = "\(deshViewOffset.bodyTitle?[indexPath.row] ?? "") : \(deshViewOffset.bodyText?[indexPath.row] ?? "값이 없습니다.")"
+//            deshViewOffset.bodyText?.[indexPath.row]
             bgColorView.backgroundColor = .clear
             Ccell.selectedBackgroundView = bgColorView
             return Ccell

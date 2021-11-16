@@ -17,38 +17,15 @@ class DeshBoardTableViewCell: UITableViewCell {
     let DeshBoardView = UIView().then {
         $0.backgroundColor = UIColor(named: "MainColor")
         $0.layer.cornerRadius = 20
-        $0.layer.shadowColor = UIColor.gray.cgColor
+        $0.layer.shadowColor = UIColor.black.cgColor
         $0.layer.shadowOpacity = 0.002
         $0.layer.shadowRadius = 20
-        $0.layer.shadowOffset = CGSize(width: 10, height: 10)
-    }
-    let decideTitleLabel = UILabel().then {
-        $0.text = "Today"
-        $0.font = UIFont(name: "ABeeZee-Regular", size: 20)
-        $0.textAlignment = .center
-        $0.textColor = .label
-        
+
     }
     let decideDateLabel = UILabel().then {
-        $0.text = "1234명 확진"
-        $0.font = UIFont(name: "NotoSansKR-Bold", size: 35)
-        $0.textAlignment = .center
-        $0.textColor = .label
+        $0.font = UIFont(name: "ABeeZee-Regular", size: 25)
+        $0.textColor = .white
     }
-    let deathDateLabel = UILabel().then {
-        $0.text = "14명 사망"
-        $0.font = UIFont(name: "NotoSansKR-Bold", size: 35)
-        $0.textAlignment = .center
-        $0.textColor = .systemRed
-    }
-    let clearDateLabel = UILabel().then {
-        $0.text = "1423명 격리헤제"
-        $0.font = UIFont(name: "NotoSansKR-Bold", size: 35)
-        $0.textAlignment = .center
-        $0.textColor = .systemBlue
-    }
-
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -58,32 +35,21 @@ class DeshBoardTableViewCell: UITableViewCell {
         contentView.addSubview(DeshBoardView)
 
         DeshBoardView.addSubview(decideDateLabel)
-        DeshBoardView.addSubview(deathDateLabel)
-        DeshBoardView.addSubview(clearDateLabel)
+        decideDateLabel.translatesAutoresizingMaskIntoConstraints = true
+        decideDateLabel.sizeToFit()
         DeshBoardView.snp.makeConstraints {
-            $0.top.equalTo(10)
+            $0.top.equalTo(5)
             $0.left.equalTo(20)
             $0.right.equalTo(-20)
+            $0.bottom.equalTo(-5)
         }
 
         decideDateLabel.snp.makeConstraints {
-            $0.top.equalTo(30)
+            $0.top.equalTo(20)
             $0.height.equalTo(35)
-            $0.left.equalTo(5)
-            $0.right.equalTo(-5)
-        }
-        deathDateLabel.snp.makeConstraints {
-            $0.top.equalTo(90)
-            $0.height.equalTo(35)
-            $0.left.equalTo(5)
-            $0.right.equalTo(-5)
-        }
-        clearDateLabel.snp.makeConstraints {
-            $0.top.equalTo(150)
-            $0.height.equalTo(35)
-            $0.left.equalTo(5)
-            $0.right.equalTo(-5)
-            $0.bottom.equalTo(-30)
+            $0.left.equalTo(25)
+            $0.right.equalTo(-25)
+            $0.bottom.equalTo(-20)
         }
     }
     
