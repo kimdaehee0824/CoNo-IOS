@@ -7,25 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		571DBD21274335CC00133FEE /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D720C7273E2FC900D25391 /* WidgetKit.framework */; };
+		571DBD22274335CD00133FEE /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D720C9273E2FC900D25391 /* SwiftUI.framework */; };
+		571DBD25274335CD00133FEE /* CovidDeshBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571DBD24274335CD00133FEE /* CovidDeshBoard.swift */; };
+		571DBD27274335CE00133FEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 571DBD26274335CE00133FEE /* Assets.xcassets */; };
+		571DBD2B274335CE00133FEE /* CovidDeshBoardExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 571DBD20274335CC00133FEE /* CovidDeshBoardExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		57BC6D37273FFECF0023FB55 /* ABeeZee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57BC6D36273FFECF0023FB55 /* ABeeZee-Regular.ttf */; };
-		57BC6D38273FFECF0023FB55 /* ABeeZee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57BC6D36273FFECF0023FB55 /* ABeeZee-Regular.ttf */; };
 		57D41F022740918C00298CA9 /* DeshBoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D41F012740918C00298CA9 /* DeshBoardTableViewCell.swift */; };
 		57D4998F274134AE00A39237 /* UpdateDateLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4998E274134AE00A39237 /* UpdateDateLabelTableViewCell.swift */; };
 		57D499912741494300A39237 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57D499902741494300A39237 /* NotoSansKR-Bold.otf */; };
 		57D499922741494300A39237 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57D499902741494300A39237 /* NotoSansKR-Bold.otf */; };
 		57D499932741494300A39237 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57D499902741494300A39237 /* NotoSansKR-Bold.otf */; };
-		57D499942741494300A39237 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57D499902741494300A39237 /* NotoSansKR-Bold.otf */; };
 		57D4999727414F3100A39237 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4999627414F3100A39237 /* MainModel.swift */; };
 		57D4999827414F3100A39237 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4999627414F3100A39237 /* MainModel.swift */; };
 		57D4999927414F3100A39237 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4999627414F3100A39237 /* MainModel.swift */; };
-		57D4999A27414F3100A39237 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4999627414F3100A39237 /* MainModel.swift */; };
-		57D720C8273E2FC900D25391 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D720C7273E2FC900D25391 /* WidgetKit.framework */; };
-		57D720CA273E2FC900D25391 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D720C9273E2FC900D25391 /* SwiftUI.framework */; };
-		57D720CD273E2FC900D25391 /* COVIDWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D720CC273E2FC900D25391 /* COVIDWidget.swift */; };
-		57D720D0273E2FCB00D25391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D720CF273E2FCB00D25391 /* Assets.xcassets */; };
-		57D720D2273E2FCB00D25391 /* COVIDWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 57D720CE273E2FC900D25391 /* COVIDWidget.intentdefinition */; };
-		57D720D3273E2FCB00D25391 /* COVIDWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 57D720CE273E2FC900D25391 /* COVIDWidget.intentdefinition */; };
-		57D720D6273E2FCB00D25391 /* COVIDWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 57D720C6273E2FC900D25391 /* COVIDWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		57D7ECB0273D21A5000FDE32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7ECAF273D21A5000FDE32 /* AppDelegate.swift */; };
 		57D7ECB2273D21A5000FDE32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7ECB1273D21A5000FDE32 /* SceneDelegate.swift */; };
 		57D7ECB9273D21A7000FDE32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D7ECB8273D21A7000FDE32 /* Assets.xcassets */; };
@@ -41,12 +36,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		57D720D4273E2FCB00D25391 /* PBXContainerItemProxy */ = {
+		571DBD29274335CE00133FEE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 57D7ECA4273D21A5000FDE32 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 57D720C5273E2FC900D25391;
-			remoteInfo = COVIDWidgetExtension;
+			remoteGlobalIDString = 571DBD1F274335CC00133FEE;
+			remoteInfo = CovidDeshBoardExtension;
 		};
 		57D7ECC3273D21A7000FDE32 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -71,7 +66,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				57D720D6273E2FCB00D25391 /* COVIDWidgetExtension.appex in Embed App Extensions */,
+				571DBD2B274335CE00133FEE /* CovidDeshBoardExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,18 +76,17 @@
 /* Begin PBXFileReference section */
 		07F9C8A2F3C41D319D325ED1 /* Pods_CoNo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoNo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEF0B3AF498788358F2D0A7 /* Pods-CoNo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoNo.release.xcconfig"; path = "Target Support Files/Pods-CoNo/Pods-CoNo.release.xcconfig"; sourceTree = "<group>"; };
+		571DBD20274335CC00133FEE /* CovidDeshBoardExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CovidDeshBoardExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		571DBD24274335CD00133FEE /* CovidDeshBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidDeshBoard.swift; sourceTree = "<group>"; };
+		571DBD26274335CE00133FEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		571DBD28274335CE00133FEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57BC6D36273FFECF0023FB55 /* ABeeZee-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ABeeZee-Regular.ttf"; path = "../../../../../Downloads/ABeeZee/ABeeZee-Regular.ttf"; sourceTree = "<group>"; };
 		57D41F012740918C00298CA9 /* DeshBoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeshBoardTableViewCell.swift; sourceTree = "<group>"; };
 		57D4998E274134AE00A39237 /* UpdateDateLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDateLabelTableViewCell.swift; sourceTree = "<group>"; };
 		57D499902741494300A39237 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Bold.otf"; path = "../../../../../Downloads/NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		57D4999627414F3100A39237 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
-		57D720C6273E2FC900D25391 /* COVIDWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = COVIDWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D720C7273E2FC900D25391 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		57D720C9273E2FC900D25391 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		57D720CC273E2FC900D25391 /* COVIDWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COVIDWidget.swift; sourceTree = "<group>"; };
-		57D720CE273E2FC900D25391 /* COVIDWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = COVIDWidget.intentdefinition; sourceTree = "<group>"; };
-		57D720CF273E2FCB00D25391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		57D720D1273E2FCB00D25391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57D7ECAC273D21A5000FDE32 /* CoNo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoNo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D7ECAF273D21A5000FDE32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57D7ECB1273D21A5000FDE32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,12 +110,12 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		57D720C3273E2FC900D25391 /* Frameworks */ = {
+		571DBD1D274335CC00133FEE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57D720CA273E2FC900D25391 /* SwiftUI.framework in Frameworks */,
-				57D720C8273E2FC900D25391 /* WidgetKit.framework in Frameworks */,
+				571DBD22274335CD00133FEE /* SwiftUI.framework in Frameworks */,
+				571DBD21274335CC00133FEE /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +146,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		571DBD23274335CD00133FEE /* CovidDeshBoard */ = {
+			isa = PBXGroup;
+			children = (
+				571DBD24274335CD00133FEE /* CovidDeshBoard.swift */,
+				571DBD26274335CE00133FEE /* Assets.xcassets */,
+				571DBD28274335CE00133FEE /* Info.plist */,
+			);
+			path = CovidDeshBoard;
+			sourceTree = "<group>";
+		};
 		57BC6D35273FFEB40023FB55 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,24 +177,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		57D720CB273E2FC900D25391 /* COVIDWidget */ = {
-			isa = PBXGroup;
-			children = (
-				57D720CC273E2FC900D25391 /* COVIDWidget.swift */,
-				57D720CE273E2FC900D25391 /* COVIDWidget.intentdefinition */,
-				57D720CF273E2FCB00D25391 /* Assets.xcassets */,
-				57D720D1273E2FCB00D25391 /* Info.plist */,
-			);
-			path = COVIDWidget;
-			sourceTree = "<group>";
-		};
 		57D7ECA3273D21A5000FDE32 = {
 			isa = PBXGroup;
 			children = (
 				57D7ECAE273D21A5000FDE32 /* CoNo */,
 				57D7ECC5273D21A7000FDE32 /* CoNoTests */,
 				57D7ECCF273D21A7000FDE32 /* CoNoUITests */,
-				57D720CB273E2FC900D25391 /* COVIDWidget */,
+				571DBD23274335CD00133FEE /* CovidDeshBoard */,
 				57D7ECAD273D21A5000FDE32 /* Products */,
 				E7E01E9B718CB0CCDC2805CE /* Pods */,
 				A2B15F7546D1B767F2A15060 /* Frameworks */,
@@ -203,7 +196,7 @@
 				57D7ECAC273D21A5000FDE32 /* CoNo.app */,
 				57D7ECC2273D21A7000FDE32 /* CoNoTests.xctest */,
 				57D7ECCC273D21A7000FDE32 /* CoNoUITests.xctest */,
-				57D720C6273E2FC900D25391 /* COVIDWidgetExtension.appex */,
+				571DBD20274335CC00133FEE /* CovidDeshBoardExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -267,21 +260,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		57D720C5273E2FC900D25391 /* COVIDWidgetExtension */ = {
+		571DBD1F274335CC00133FEE /* CovidDeshBoardExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 57D720DA273E2FCB00D25391 /* Build configuration list for PBXNativeTarget "COVIDWidgetExtension" */;
+			buildConfigurationList = 571DBD2E274335CE00133FEE /* Build configuration list for PBXNativeTarget "CovidDeshBoardExtension" */;
 			buildPhases = (
-				57D720C2273E2FC900D25391 /* Sources */,
-				57D720C3273E2FC900D25391 /* Frameworks */,
-				57D720C4273E2FC900D25391 /* Resources */,
+				571DBD1C274335CC00133FEE /* Sources */,
+				571DBD1D274335CC00133FEE /* Frameworks */,
+				571DBD1E274335CC00133FEE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = COVIDWidgetExtension;
-			productName = COVIDWidgetExtension;
-			productReference = 57D720C6273E2FC900D25391 /* COVIDWidgetExtension.appex */;
+			name = CovidDeshBoardExtension;
+			productName = CovidDeshBoardExtension;
+			productReference = 571DBD20274335CC00133FEE /* CovidDeshBoardExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		57D7ECAB273D21A5000FDE32 /* CoNo */ = {
@@ -298,7 +291,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				57D720D5273E2FCB00D25391 /* PBXTargetDependency */,
+				571DBD2A274335CE00133FEE /* PBXTargetDependency */,
 			);
 			name = CoNo;
 			productName = CoNo;
@@ -354,7 +347,7 @@
 				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
-					57D720C5273E2FC900D25391 = {
+					571DBD1F274335CC00133FEE = {
 						CreatedOnToolsVersion = 13.1;
 					};
 					57D7ECAB273D21A5000FDE32 = {
@@ -386,19 +379,17 @@
 				57D7ECAB273D21A5000FDE32 /* CoNo */,
 				57D7ECC1273D21A7000FDE32 /* CoNoTests */,
 				57D7ECCB273D21A7000FDE32 /* CoNoUITests */,
-				57D720C5273E2FC900D25391 /* COVIDWidgetExtension */,
+				571DBD1F274335CC00133FEE /* CovidDeshBoardExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		57D720C4273E2FC900D25391 /* Resources */ = {
+		571DBD1E274335CC00133FEE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57D720D0273E2FCB00D25391 /* Assets.xcassets in Resources */,
-				57D499942741494300A39237 /* NotoSansKR-Bold.otf in Resources */,
-				57BC6D38273FFECF0023FB55 /* ABeeZee-Regular.ttf in Resources */,
+				571DBD27274335CE00133FEE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,13 +526,11 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		57D720C2273E2FC900D25391 /* Sources */ = {
+		571DBD1C274335CC00133FEE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57D720D2273E2FCB00D25391 /* COVIDWidget.intentdefinition in Sources */,
-				57D720CD273E2FC900D25391 /* COVIDWidget.swift in Sources */,
-				57D4999A27414F3100A39237 /* MainModel.swift in Sources */,
+				571DBD25274335CD00133FEE /* CovidDeshBoard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,7 +545,6 @@
 				57D7ECB2273D21A5000FDE32 /* SceneDelegate.swift in Sources */,
 				57D4998F274134AE00A39237 /* UpdateDateLabelTableViewCell.swift in Sources */,
 				57D41F022740918C00298CA9 /* DeshBoardTableViewCell.swift in Sources */,
-				57D720D3273E2FCB00D25391 /* COVIDWidget.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,10 +570,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		57D720D5273E2FCB00D25391 /* PBXTargetDependency */ = {
+		571DBD2A274335CE00133FEE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 57D720C5273E2FC900D25391 /* COVIDWidgetExtension */;
-			targetProxy = 57D720D4273E2FCB00D25391 /* PBXContainerItemProxy */;
+			target = 571DBD1F274335CC00133FEE /* CovidDeshBoardExtension */;
+			targetProxy = 571DBD29274335CE00133FEE /* PBXContainerItemProxy */;
 		};
 		57D7ECC4273D21A7000FDE32 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -611,7 +599,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		57D720D8273E2FCB00D25391 /* Debug */ = {
+		571DBD2C274335CE00133FEE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -620,8 +608,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z25H7B85Z8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = COVIDWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = COVIDWidget;
+				INFOPLIST_FILE = CovidDeshBoard/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CovidDeshBoard;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -629,7 +617,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rich.CoNo.COVIDWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rich.CoNo.CovidDeshBoard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -638,17 +626,17 @@
 			};
 			name = Debug;
 		};
-		57D720D9273E2FCB00D25391 /* Release */ = {
+		571DBD2D274335CE00133FEE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z25H7B85Z8;
+				DEVELOPMENT_TEAM = 368YFJ26SB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = COVIDWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = COVIDWidget;
+				INFOPLIST_FILE = CovidDeshBoard/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CovidDeshBoard;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -656,7 +644,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rich.CoNo.COVIDWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rich.CoNo.CovidDeshBoard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -942,11 +930,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		57D720DA273E2FCB00D25391 /* Build configuration list for PBXNativeTarget "COVIDWidgetExtension" */ = {
+		571DBD2E274335CE00133FEE /* Build configuration list for PBXNativeTarget "CovidDeshBoardExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				57D720D8273E2FCB00D25391 /* Debug */,
-				57D720D9273E2FCB00D25391 /* Release */,
+				571DBD2C274335CE00133FEE /* Debug */,
+				571DBD2D274335CE00133FEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
