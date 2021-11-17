@@ -9,13 +9,14 @@ import UIKit
 import SnapKit
 import Then
 import WidgetKit
-
+import UserNotifications
 import RxSwift
 import RxCocoa
 
 class MainViewController: UIViewController {
     
     let bag = DisposeBag()
+    let userNotificationCenter = UNUserNotificationCenter.current()
     
     let mainTableView = UITableView().then {
         $0.backgroundColor = .clear
@@ -39,11 +40,12 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-                dateGet()
+        CovidData.data.dateGet()
+        print("2121212121\(CovidData.data.requstSecideCount() ?? "sadasdsad")")
+        requestNotificationAuthorization()
         mainTableView.delegate = self
         mainTableView.dataSource = self
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.4) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
             self.mainTableView.reloadData()
         }
         mainTableView.reloadData()
@@ -56,7 +58,33 @@ class MainViewController: UIViewController {
         setConstraint()
         setSafeArea()
     }
-    
+    func requestNotificationAuthorization() {
+        let authOptions = UNAuthorizationOptions(arrayLiteral: .alert, .badge, .sound)
+
+           userNotificationCenter.requestAuthorization(options: authOptions) { success, error in
+               if let error = error {
+                   print("Error: \(error)")
+               }
+           }
+    }
+
+    func sendNotification(seconds: Double) {
+        let notificationContent = UNMutableNotificationContent()
+
+          notificationContent.title = "오늘의 확진자"
+        notificationContent.body = "코로나 10 확진자 : \(covid19struct.NOW_DECIDE_CNT ?? "No Data"), 사망자 : \(covid19struct.NOW_DEATH_CNT ?? "No Data"), 격리해제 : \(covid19struct.NOW_CLEAR_CNT)" ?? "No Data"
+
+          let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false)
+          let request = UNNotificationRequest(identifier: "testNotification",
+                                              content: notificationContent,
+                                              trigger: trigger)
+
+          userNotificationCenter.add(request) { error in
+              if let error = error {
+                  print("Notification Error: ", error)
+              }
+          }
+    }
     func setConstraint() {
         mainTableView.snp.makeConstraints {
             $0.top.equalTo(0)
@@ -64,7 +92,7 @@ class MainViewController: UIViewController {
             $0.right.equalTo(0)
             $0.bottom.equalTo(0)
         }
-
+        
         
         
     }
@@ -102,16 +130,27 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
         }
         else {
             let deshViewOffset = DeshViewOffset()
-//        if indexPath.row == 1 {
             let Ccell = tableView.dequeueReusableCell(withIdentifier: "cell") as! DeshBoardTableViewCell
             let bgColorView = UIView()
             Ccell.DeshBoardView.backgroundColor = deshViewOffset.backColor?[indexPath.row]
             Ccell.decideDateLabel.textColor = deshViewOffset.labelColor?[indexPath.row]
             Ccell.decideDateLabel.text = "\(deshViewOffset.bodyTitle?[indexPath.row] ?? "") : \(deshViewOffset.bodyText?[indexPath.row] ?? "값이 없습니다.")"
-//            deshViewOffset.bodyText?.[indexPath.row]
             bgColorView.backgroundColor = .clear
             Ccell.selectedBackgroundView = bgColorView
             return Ccell
         }
+    }
+}
+extension MainViewController: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.banner, .badge, .sound])
     }
 }
