@@ -17,7 +17,7 @@ class UpdateDateLabelTableViewCell: UITableViewCell {
 
     var CovidDeviderTitleLabel = UILabel().then {
         $0.text = covid19struct.updateDate
-        $0.font = UIFont(name: "ABeeZee-Regular", size: 20.0)
+        $0.font = UIFont(name: "ABeeZee-Regular", size: 18)
         $0.textAlignment = .center
     }
     

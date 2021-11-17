@@ -23,7 +23,7 @@ class DeshBoardTableViewCell: UITableViewCell {
 
     }
     let decideDateLabel = UILabel().then {
-        $0.font = UIFont(name: "ABeeZee-Regular", size: 25)
+        $0.font = UIFont(name: "ABeeZee-Regular", size: 22)
         $0.textColor = .white
     }
     override func awakeFromNib() {
