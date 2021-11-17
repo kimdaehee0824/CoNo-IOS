@@ -25,7 +25,6 @@ class MainViewController: UIViewController {
         $0.rowHeight = UITableView.automaticDimension
     }
     
-    
     let mainBackView = UIView().then {
         $0.backgroundColor = .clear
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -36,15 +35,13 @@ class MainViewController: UIViewController {
         $0.tintColor = .label
     }
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         CovidData.data.dateGet()
-        print("2121212121\(CovidData.data.requstSecideCount() ?? "sadasdsad")")
-        requestNotificationAuthorization()
         mainTableView.delegate = self
         mainTableView.dataSource = self
+        requestNotificationAuthorization()
+        sendNotification(seconds: 1)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
             self.mainTableView.reloadData()
         }
@@ -60,30 +57,33 @@ class MainViewController: UIViewController {
     }
     func requestNotificationAuthorization() {
         let authOptions = UNAuthorizationOptions(arrayLiteral: .alert, .badge, .sound)
-
-           userNotificationCenter.requestAuthorization(options: authOptions) { success, error in
-               if let error = error {
-                   print("Error: \(error)")
-               }
-           }
+        
+        userNotificationCenter.requestAuthorization(options: authOptions) { success, error in
+            if let error = error {
+                print("Error: \(error)")
+            }
+        }
     }
-
     func sendNotification(seconds: Double) {
+        CovidData.data.dateGet()
         let notificationContent = UNMutableNotificationContent()
-
-          notificationContent.title = "오늘의 확진자"
-        notificationContent.body = "코로나 10 확진자 : \(covid19struct.NOW_DECIDE_CNT ?? "No Data"), 사망자 : \(covid19struct.NOW_DEATH_CNT ?? "No Data"), 격리해제 : \(covid19struct.NOW_CLEAR_CNT)" ?? "No Data"
-
-          let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false)
-          let request = UNNotificationRequest(identifier: "testNotification",
-                                              content: notificationContent,
-                                              trigger: trigger)
-
-          userNotificationCenter.add(request) { error in
-              if let error = error {
-                  print("Notification Error: ", error)
-              }
-          }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.4) {
+            notificationContent.title = "오늘의 확진자"
+            notificationContent.body = "확진자 : \(covid19struct.NOW_DECIDE_CNT ?? "No Data")명, 사망자 : \(covid19struct.NOW_DEATH_CNT ?? "No Data")명, 격리해제 : \(covid19struct.NOW_CLEAR_CNT ?? "No Data")명"
+            var dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: Date())
+            dateComponents.hour = 9
+            dateComponents.minute = 30
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+            let request = UNNotificationRequest(identifier: "testNotification",
+                                                content: notificationContent,
+                                                trigger: trigger)
+            self.userNotificationCenter.add(request) { error in
+                if let error = error {
+                    print("Notification Error: ", error)
+                }
+            }
+        }
+        
     }
     func setConstraint() {
         mainTableView.snp.makeConstraints {
@@ -92,9 +92,6 @@ class MainViewController: UIViewController {
             $0.right.equalTo(0)
             $0.bottom.equalTo(0)
         }
-        
-        
-        
     }
     func setSafeArea() {
         mainBackView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
@@ -111,14 +108,11 @@ class MainViewController: UIViewController {
         self.navigationItem.titleView = imageView
         self.navigationItem.rightBarButtonItem = personButton
     }
-    
-    
 }
 extension MainViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 7
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let Ccell = tableView.dequeueReusableCell(withIdentifier: "cell2") as! UpdateDateLabelTableViewCell
@@ -134,20 +128,20 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
             let bgColorView = UIView()
             Ccell.DeshBoardView.backgroundColor = deshViewOffset.backColor?[indexPath.row]
             Ccell.decideDateLabel.textColor = deshViewOffset.labelColor?[indexPath.row]
-            Ccell.decideDateLabel.text = "\(deshViewOffset.bodyTitle?[indexPath.row] ?? "") : \(deshViewOffset.bodyText?[indexPath.row] ?? "값이 없습니다.")"
+            Ccell.decideDateLabel.text = "\(deshViewOffset.bodyTitle?[indexPath.row] ?? "") : \(deshViewOffset.bodyText?[indexPath.row] ?? "값이 없습니다.")명"
             bgColorView.backgroundColor = .clear
             Ccell.selectedBackgroundView = bgColorView
             return Ccell
         }
     }
 }
-extension MainViewController: UNUserNotificationCenterDelegate {
+extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
         completionHandler()
     }
-
+    
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
