@@ -13,7 +13,6 @@ import SwiftyXMLParser
 let apiKey = "6v8BYgD7fIO1KjC3kqQ6w73J7NCGn%2BwAdqZT7WjhN%2BubaEF50QO9YalOb8ZFZzkl5nTXjtJAjdbrncrJJGwvAw%3D%3D"
 let DateData = Date()
 let yesData = Date(timeIntervalSinceNow:-(60*60*24))
-// http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson?serviceKey=6v8BYgD7fIO1KjC3kqQ6w73J7NCGn%2BwAdqZT7WjhN%2BubaEF50QO9YalOb8ZFZzkl5nTXjtJAjdbrncrJJGwvAw%3D%3D&pageNo=1&numOfRows=10&startCreateDt=20211111&endCreateDt=20211112
 //http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson?serviceKey=\(apiKey)&pageNo=1&numOfRows=10&startCreateDt=\(yesconvertDate)&endCreateDt=\(convertDate)
 
 class CovidData {
@@ -27,7 +26,7 @@ class CovidData {
         let yesconvertDate = fommatter.string(from: yesData)
         
         
-        AF.request("http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson?serviceKey=\(apiKey)&pageNo=1&numOfRows=10&startCreateDt=\(yesconvertDate)&endCreateDt=\(convertDate)", method: .get )
+        AF.request(" http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson?serviceKey=\(apiKey)&pageNo=1&numOfRows=10&startCreateDt=\(yesconvertDate)&endCreateDt=\(convertDate)", method: .get )
             .validate(statusCode: 200..<300)
             .responseString { response in
                 let url = response.request

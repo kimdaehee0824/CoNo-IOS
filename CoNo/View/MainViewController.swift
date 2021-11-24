@@ -69,7 +69,11 @@ class MainViewController: UIViewController {
         let notificationContent = UNMutableNotificationContent()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.4) {
             notificationContent.title = "오늘의 확진자"
-            notificationContent.body = "확진자 : \(covid19struct.NOW_DECIDE_CNT ?? "No Data")명, 사망자 : \(covid19struct.NOW_DEATH_CNT ?? "No Data")명, 격리해제 : \(covid19struct.NOW_CLEAR_CNT ?? "No Data")명"
+            let nowDecideCount = covid19struct.NOW_DECIDE_CNT ?? ""
+            let nowDeathCount = covid19struct.NOW_DEATH_CNT ?? ""
+            let nowClearCount = covid19struct.NOW_CLEAR_CNT ?? ""
+            notificationContent.body = "확진자 : \(DecimalNumber(value: Int(nowDecideCount) ?? 0)), 사망자 : \(DecimalNumber(value: Int(nowDeathCount) ?? 0)), 격리해제 : \(DecimalNumber(value: Int(nowClearCount) ?? 0))"
+
             var dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: Date())
             dateComponents.hour = 9
             dateComponents.minute = 30
@@ -128,13 +132,23 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
             let bgColorView = UIView()
             Ccell.DeshBoardView.backgroundColor = deshViewOffset.backColor?[indexPath.row]
             Ccell.decideDateLabel.textColor = deshViewOffset.labelColor?[indexPath.row]
-            Ccell.decideDateLabel.text = "\(deshViewOffset.bodyTitle?[indexPath.row] ?? "") : \(deshViewOffset.bodyText?[indexPath.row] ?? "값이 없습니다.")명"
+            let celltext : String = deshViewOffset.bodyText?[indexPath.row] ?? ""
+
+            Ccell.decideDateLabel.text = "\(deshViewOffset.bodyTitle?[indexPath.row] ?? "") : \(DecimalNumber(value: Int(celltext) ?? 0))"
             bgColorView.backgroundColor = .clear
             Ccell.selectedBackgroundView = bgColorView
             return Ccell
         }
     }
 }
+
+func DecimalNumber(value: Int) -> String{
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let result = numberFormatter.string(from: NSNumber(value: value))! + "명"
+        
+        return result
+    }
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
