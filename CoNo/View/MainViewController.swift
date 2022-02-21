@@ -12,6 +12,7 @@ import WidgetKit
 import UserNotifications
 import RxSwift
 import RxCocoa
+import SafariServices
 
 class MainViewController: UIViewController {
     
@@ -35,6 +36,17 @@ class MainViewController: UIViewController {
         $0.tintColor = .label
     }
     
+    let moveCovidBoardButton = UIButton().then {
+        $0.backgroundColor = UIColor(named: "DeathColor")
+        $0.setTitle("Coronaboard로 이동하기", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.layer.cornerRadius = 20
+        $0.layer.shadowColor = UIColor.black.cgColor
+        $0.layer.shadowOpacity = 0.02
+        $0.layer.shadowRadius = 20
+
+    }
+    
     override func viewDidLoad() {
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveTestNotification(_:)), name: NSNotification.Name("TestNotification"), object: nil)
         super.viewDidLoad()
@@ -47,6 +59,14 @@ class MainViewController: UIViewController {
         mainTableView.register(UpdateDateLabelTableViewCell.self, forCellReuseIdentifier: "cell2")
         view.addSubview(mainBackView)
         mainBackView.addSubview(mainTableView)
+        mainBackView.addSubview(moveCovidBoardButton)
+        moveCovidBoardButton.rx.tap.bind {
+            guard let url = URL(string: "https://coronaboard.kr") else { return }
+            let safariViewController = SFSafariViewController(url: url)
+            safariViewController.modalPresentationStyle = .fullScreen
+
+            self.present(safariViewController, animated: true, completion: nil)
+        }.disposed(by: bag)
         setNavagationBar()
         setConstraint()
         setSafeArea()
@@ -82,6 +102,12 @@ class MainViewController: UIViewController {
             $0.left.equalTo(0)
             $0.right.equalTo(0)
             $0.bottom.equalTo(0)
+        }
+        moveCovidBoardButton.snp.makeConstraints {
+            $0.bottom.equalTo(-5)
+            $0.leading.equalTo(20)
+            $0.trailing.equalTo(-20)
+            $0.height.equalTo(60)
         }
     }
     func setSafeArea() {
@@ -129,7 +155,7 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
         }
     }
     @objc func didRecieveTestNotification(_ notification: Notification) {
-            print("Test Notification")
+        print("Test Notification")
         self.mainTableView.reloadData()
     }
 }
