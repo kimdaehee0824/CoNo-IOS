@@ -144,7 +144,7 @@ class CovidData {
                         fommatter.dateFormat = "yyyy.MM.dd"
                         let updateDate = fommatter.string(from: date ?? .now)
                         covid19struct.updateDate = "\(updateDate)"
-                        
+                        NotificationCenter.default.post(name: NSNotification.Name("TestNotification"), object: nil, userInfo: nil)
                     }
                     
                 case .failure(let error):

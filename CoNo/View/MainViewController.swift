@@ -36,33 +36,20 @@ class MainViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveTestNotification(_:)), name: NSNotification.Name("TestNotification"), object: nil)
         super.viewDidLoad()
         CovidData.data.dateGet()
         mainTableView.delegate = self
         mainTableView.dataSource = self
-        requestNotificationAuthorization()
         sendNotification(seconds: 1)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-            self.mainTableView.reloadData()
-        }
         mainTableView.reloadData()
         mainTableView.register(DeshBoardTableViewCell.self, forCellReuseIdentifier: "cell")
         mainTableView.register(UpdateDateLabelTableViewCell.self, forCellReuseIdentifier: "cell2")
-        view.backgroundColor = .systemBackground
         view.addSubview(mainBackView)
         mainBackView.addSubview(mainTableView)
         setNavagationBar()
         setConstraint()
         setSafeArea()
-    }
-    func requestNotificationAuthorization() {
-        let authOptions = UNAuthorizationOptions(arrayLiteral: .alert, .badge, .sound)
-        
-        userNotificationCenter.requestAuthorization(options: authOptions) { success, error in
-            if let error = error {
-                print("Error: \(error)")
-            }
-        }
     }
     func sendNotification(seconds: Double) {
         CovidData.data.dateGet()
@@ -73,7 +60,7 @@ class MainViewController: UIViewController {
             let nowDeathCount = covid19struct.NOW_DEATH_CNT ?? ""
             let nowClearCount = covid19struct.NOW_CLEAR_CNT ?? ""
             notificationContent.body = "확진자 : \(DecimalNumber(value: Int(nowDecideCount) ?? 0)), 사망자 : \(DecimalNumber(value: Int(nowDeathCount) ?? 0)), 격리해제 : \(DecimalNumber(value: Int(nowClearCount) ?? 0))"
-
+            
             var dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: Date())
             dateComponents.hour = 9
             dateComponents.minute = 30
@@ -105,7 +92,7 @@ class MainViewController: UIViewController {
     }
     
     func setNavagationBar() {
-        self.view.backgroundColor = .systemBackground
+        self.view.backgroundColor = .systemGroupedBackground
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         let image = UIImage(named: "CoNoTitle")
         imageView.image = image
@@ -115,7 +102,7 @@ class MainViewController: UIViewController {
 }
 extension MainViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 5
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
@@ -123,6 +110,7 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
             let bgColorView = UIView()
             bgColorView.backgroundColor = .clear
             Ccell.selectedBackgroundView = bgColorView
+            Ccell.backgroundColor = .systemGroupedBackground
             Ccell.CovidDeviderTitleLabel.text = "\(covid19struct.updateDate ?? "데이터가 없어요")일 기준"
             return Ccell
         }
@@ -130,35 +118,26 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
             let deshViewOffset = DeshViewOffset()
             let Ccell = tableView.dequeueReusableCell(withIdentifier: "cell") as! DeshBoardTableViewCell
             let bgColorView = UIView()
-            Ccell.DeshBoardView.backgroundColor = deshViewOffset.backColor?[indexPath.row]
+            Ccell.DeshBoardView.backgroundColor = .secondarySystemGroupedBackground
             Ccell.decideDateLabel.textColor = deshViewOffset.labelColor?[indexPath.row]
             let celltext : String = deshViewOffset.bodyText?[indexPath.row] ?? ""
-
+            Ccell.backgroundColor = .systemGroupedBackground
             Ccell.decideDateLabel.text = "\(deshViewOffset.bodyTitle?[indexPath.row] ?? "") : \(DecimalNumber(value: Int(celltext) ?? 0))"
             bgColorView.backgroundColor = .clear
             Ccell.selectedBackgroundView = bgColorView
             return Ccell
         }
     }
+    @objc func didRecieveTestNotification(_ notification: Notification) {
+            print("Test Notification")
+        self.mainTableView.reloadData()
+    }
 }
 
 func DecimalNumber(value: Int) -> String{
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        let result = numberFormatter.string(from: NSNumber(value: value))! + "명"
-        
-        return result
-    }
-extension AppDelegate: UNUserNotificationCenterDelegate {
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                didReceive response: UNNotificationResponse,
-                                withCompletionHandler completionHandler: @escaping () -> Void) {
-        completionHandler()
-    }
+    let numberFormatter = NumberFormatter()
+    numberFormatter.numberStyle = .decimal
+    let result = numberFormatter.string(from: NSNumber(value: value))! + "명"
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                willPresent notification: UNNotification,
-                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.banner, .badge, .sound])
-    }
+    return result
 }

@@ -17,14 +17,11 @@
 		571DBD25274335CD00133FEE /* CovidDeshBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571DBD24274335CD00133FEE /* CovidDeshBoard.swift */; };
 		571DBD27274335CE00133FEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 571DBD26274335CE00133FEE /* Assets.xcassets */; };
 		571DBD2B274335CE00133FEE /* CovidDeshBoardExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 571DBD20274335CC00133FEE /* CovidDeshBoardExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		573962F62743ABAF00F53B3D /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		573962F62743ABAF00F53B3D /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5784D3AE2743A9080066A5DB /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4999627414F3100A39237 /* MainModel.swift */; };
 		57BC6D37273FFECF0023FB55 /* ABeeZee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57BC6D36273FFECF0023FB55 /* ABeeZee-Regular.ttf */; };
 		57D41F022740918C00298CA9 /* DeshBoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D41F012740918C00298CA9 /* DeshBoardTableViewCell.swift */; };
 		57D4998F274134AE00A39237 /* UpdateDateLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4998E274134AE00A39237 /* UpdateDateLabelTableViewCell.swift */; };
-		57D499912741494300A39237 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57D499902741494300A39237 /* NotoSansKR-Bold.otf */; };
-		57D499922741494300A39237 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57D499902741494300A39237 /* NotoSansKR-Bold.otf */; };
-		57D499932741494300A39237 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57D499902741494300A39237 /* NotoSansKR-Bold.otf */; };
 		57D4999727414F3100A39237 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4999627414F3100A39237 /* MainModel.swift */; };
 		57D4999827414F3100A39237 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4999627414F3100A39237 /* MainModel.swift */; };
 		57D4999927414F3100A39237 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4999627414F3100A39237 /* MainModel.swift */; };
@@ -72,7 +69,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				573962F62743ABAF00F53B3D /* BuildFile in Embed Frameworks */,
+				573962F62743ABAF00F53B3D /* (null) in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,7 +99,6 @@
 		57BC6D36273FFECF0023FB55 /* ABeeZee-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ABeeZee-Regular.ttf"; path = "../../../../../Downloads/ABeeZee/ABeeZee-Regular.ttf"; sourceTree = "<group>"; };
 		57D41F012740918C00298CA9 /* DeshBoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeshBoardTableViewCell.swift; sourceTree = "<group>"; };
 		57D4998E274134AE00A39237 /* UpdateDateLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDateLabelTableViewCell.swift; sourceTree = "<group>"; };
-		57D499902741494300A39237 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Bold.otf"; path = "../../../../../Downloads/NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		57D4999627414F3100A39237 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		57D720C7273E2FC900D25391 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		57D720C9273E2FC900D25391 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -183,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				57D7ECB8273D21A7000FDE32 /* Assets.xcassets */,
-				57D499902741494300A39237 /* NotoSansKR-Bold.otf */,
 				57BC6D36273FFECF0023FB55 /* ABeeZee-Regular.ttf */,
 			);
 			path = Assets;
@@ -429,7 +424,6 @@
 			files = (
 				57BC6D37273FFECF0023FB55 /* ABeeZee-Regular.ttf in Resources */,
 				57D7ECBC273D21A7000FDE32 /* LaunchScreen.storyboard in Resources */,
-				57D499912741494300A39237 /* NotoSansKR-Bold.otf in Resources */,
 				57D7ECB9273D21A7000FDE32 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,7 +432,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57D499922741494300A39237 /* NotoSansKR-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +439,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57D499932741494300A39237 /* NotoSansKR-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
