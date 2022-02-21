@@ -22,14 +22,12 @@ struct Covid19struct {
 var covid19struct = Covid19struct()
 
 struct DeshViewOffset {
-    var backColor : [UIColor?]?
     var labelColor : [UIColor]?
     var bodyTitle : [String]?
     var bodyText : [String?]?
     init() {
-        self.backColor = [.clear, UIColor(named: "Color-2"), UIColor(named: "DeathColor"),  UIColor(named: "ClearColor"), UIColor(named: "Color-2"), UIColor(named: "DeathColor"),  UIColor(named: "ClearColor")]
         self.labelColor = [.label, .label, .label, .label, .label, .label, .label]
-        self.bodyTitle =  ["", "오늘 확진자", "오늘 사망자", "오늘 격리헤제", "전체 확진자", "전체 사망자", "전체 격리헤제"]
-        self.bodyText = [covid19struct.updateDate, covid19struct.NOW_DECIDE_CNT, covid19struct.NOW_DEATH_CNT, covid19struct.NOW_CLEAR_CNT, covid19struct.DECIDE_CNT, covid19struct.DEATH_CNT, covid19struct.CLEAR_CNT]
+        self.bodyTitle =  ["", "오늘 확진자", "오늘 사망자", "전체 확진자", "전체 사망자"]
+        self.bodyText = [covid19struct.updateDate, covid19struct.NOW_DECIDE_CNT, covid19struct.NOW_DEATH_CNT, covid19struct.DECIDE_CNT, covid19struct.DEATH_CNT]
     }
 }
